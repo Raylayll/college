@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>复杂网页</title>
+</head>
+<style type="text/css">
+	*{margin: 0;padding: 0;}
+	html,body{
+		height: 100%;
+	}
+	li{list-style: none;}
+	.left1{
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;		
+		width: 100px;
+		height: 100%;
+		background-color: #1d2531;
+	}
+	.left-top{
+		position: absolute;
+	}
+	.left1-item{
+		margin-top: 18px;
+		display: block;
+		text-align: center;
+	}
+
+
+	.left1-bottom{
+		width: 100%;
+		margin: 0 auto;
+		position: absolute;
+		bottom:0;
+		left: 20px;
+	}
+	.left1-item2{
+		margin-left: 5px;
+		margin-bottom: 5px;
+	}
+
+	
+	/*第二部分*/
+	.left2{
+		position: fixed;
+		left:100px;
+		width: 250px;
+		height: 100%;
+		background-color: #222c3c;
+	}
+
+	.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+	.clearfix{*+height:1%;}
+
+	section{
+		margin-left: 350px;
+	}
+
+	header{
+		border-bottom:1px solid #e6e9ec; 
+	}
+	.massage{
+		height: 80px;
+		line-height: 80px;
+		float: left;
+		font-size: 24px;
+    	color: #333;
+    	padding-left: 32px;
+	}
+	.name{
+		float: right;
+		position: relative;
+		padding-right: 80px;
+		padding-top: 15px;
+	}
+	.name-img{float: left;margin-right: 16px;}
+	.name-info{
+		padding-top: 6px;
+    	padding-left: 66px;
+	}
+	.name-info p:nth-child(1) {
+		font-size: 16px;
+    	color: #2399f1;
+	}
+	.name-info p:nth-child(2){
+		font-size: 12px;
+    	color: #999;
+	}
+	.arrow{
+		position: absolute;
+		right: 30px;
+		top: 30px;
+	}
+
+	.search{
+		float: left;
+		width: 400px;
+		position: relative;
+		//由于.left与.right-fix重合，且.right-fix在DOM树上的位置比.left要后，因此.right-fix会遮挡住.left，设置.left为relative可以让其冒出来。
+	}
+	.detail-fix{
+		float: right;
+		width: 100%;
+		margin-left: -400px;
+	}
+	.detail{margin-left: 400px;
+	//由于.left和.right-fix重合了，因此给.right设置一个margin-left，避免内容区（.right）与.left重合。另外，120px - 100px = 多出来的20px实际上就相当于.left和.right之间的间隔了
+	}
+
+	.search-block,.page{
+		box-sizing:border-box;
+		height: 70px;
+		border:1px solid #e6e9ec;
+	}
+	.search-block{
+		
+		padding-top: 16px;
+		padding-left: 30px;
+	}
+	.google{
+		height: 36px;
+		width: 340px;
+		border:1px solid #e6e9ec; 
+		border-radius: 5px;
+		text-indent: 10px;
+	}
+	
+	.search-img{
+		position: absolute;
+		top: 28px;
+		right: 40px;
+	}
+
+	.person-list{border-right: 1px solid #e6e9ec;}
+	.person-list > ul > li{
+		height: 130px;
+	    border-bottom: 1px solid #e6e9ec;
+	    box-sizing: border-box;
+	    padding: 18px 28px;
+	}
+
+	.list-img{float: left;margin-right: 10px;}
+	.person-list ul li h3 span {
+	    float: right;
+	    font-size: 12px;
+	    font-weight: 300;
+	}
+	.person-list ul li h6{
+	    font-weight: 300;
+	    margin-bottom: 18px;
+	}	
+	.person-list div:nth-child(3){
+		font-size: 12px;
+    	color: #999;
+    	padding-right: 30px;
+	}
+	.person-list div:nth-child(3):after{
+		content: "4";
+		background-color: #2399f1;
+		width: 24px;
+		height: 24px;
+		border-radius: 12px;
+		text-align: center;
+		line-height: 24px;
+		color: #fff;
+		position: absolute;
+		right: 26px;
+		top: 150px;
+	}
+
+	.page{
+		box-sizing: border-box;
+		padding-left: 30px;
+	}
+	.page-name{
+		line-height: 70px;
+		float: left;
+		margin-right: 100px;
+	}
+	.statue{color:green;}
+	.three-icon{
+		margin-top: 25px;
+		
+	}
+	.three-icon img{
+		border:1px solid #ccc;
+		padding: 5px;
+		float: left;
+	}
+</style>
+<body>
+	<div class="left1">
+		<div class="left1-top">
+			<a href="#" class="left1-item"><img src="Item 1.png" ></a>
+			<a href="#" class="left1-item"><img src="Item 2.png"></a>
+			<a href="#" class="left1-item"><img src="Item 3.png"></a>
+			<a href="#" class="left1-item"><img src="Add App.png"></a>
+		</div>
+		<div class="left1-bottom">
+			<a href="#" class="left1-item2"><img src="Grid.png" ></a>
+			<a href="#" class="left1-item2"><img src="Settings.png"></a>
+		</div>
+	</div>
+
+	<div class="left2">
+		
+	</div>
+
+	<section>
+		<header class="title clearfix">
+			<div class="massage">massage</div>
+			<div class="name clearfix"> 
+				<div class="name-img"><img src="Photo.png"></div>
+				<div class="name-info">
+					<p>Jordan J.</p>
+					<p>Administrator</p>
+				</div>
+
+				<div class="arrow">
+					<img src="dropdown.png">
+				</div>
+			</div>
+		</header>
+
+		<nav class="clearfix">
+			<div class="search">
+				<div class="search-block">
+					<input class="google" placeholder="search"><span></span>
+				</div>
+				<img src="Search icon.png" class="search-img">
+				
+				<div class="person-list">
+					<ul>
+						<li class="person-active">
+							<div class="list-img"><img src="Avatar photo.png"></div>
+							<div>
+								<h3>Jordan J.<span>3m</span></h3>
+								<h6>Administrator</h6>
+							</div>
+							<div>
+								I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable...
+							</div>
+						</li>
+						<li><img src="Avatar photo.png" ></li>
+						<li><img src="Avatar photo.png" ></li>
+						<li><img src="Avatar photo.png" ></li>
+						<li><img src="Avatar photo.png" ></li>
+						<li><img src="Avatar photo.png" ></li>
+						<li><img src="Avatar photo.png" ></li>
+						<li><img src="Avatar photo.png" ></li>
+						<li><img src="Avatar photo.png" ></li>
+					</ul>
+				</div>
+				
+			</div>
+			<div class="detail-fix">
+				<div class="detail">
+					<div class="page">
+						<div class="page-name"><p>Bessie Berry <span class="statue">●</span></p></div>
+						<div class="three-icon">
+							<img src="User icon.png">
+							<img src="Upload icon.png">
+							<img src="Trash icon.png">
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</nav>
+	</section>
+</body>
+</html>
